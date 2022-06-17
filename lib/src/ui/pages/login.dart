@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
       Navigator.of(context)
           .pushNamedAndRemoveUntil(RoutesNames.home, (route) => false);
     } catch (e) {
-      log(" este es un maldito error ${e.toString()}");
+      log(e.toString());
     }
   }
 

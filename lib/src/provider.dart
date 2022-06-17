@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:post/src/data/repositories/auth_repository.dart';
 
 class Provider extends InheritedWidget {
-  Provider({Key? key, required Widget child, required this.authRepository})
+  const Provider(
+      {Key? key, required Widget child, required this.authRepository})
       : super(key: key, child: child);
 
   final AuthRepository authRepository;

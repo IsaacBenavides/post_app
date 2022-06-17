@@ -41,6 +41,5 @@ class MyApp extends StatelessWidget {
 
 
 /// TODO:
-/// - mostrar errores al momento de loguearse o registraese
 /// - crear pantalla de post
 /// - crear pantalla de perfil
