@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:post/src/ui/widgets/bottom_nav_bar.dart';
 import 'package:post/src/utils/session.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,8 +13,13 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Text(
           '${Session.instance.user?.email}',
-          style: TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black),
         ),
+      ),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        onItemSelected: (index) {
+          log('index: $index');
+        },
       ),
     );
   }
