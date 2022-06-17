@@ -9,7 +9,8 @@ class CustomRoutes {
   static Route<dynamic> routes(RouteSettings settings) {
     switch (settings.name) {
       case RoutesNames.home:
-        return MaterialPageRoute(builder: (context) => const HomePage());
+        return MaterialPageRoute(
+            builder: (context) => const HomePage(), settings: settings);
       case RoutesNames.splash:
         return MaterialPageRoute(
             builder: (context) => const SplashScreen(), settings: settings);

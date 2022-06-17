@@ -1,10 +1,12 @@
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:post/src/controllers/dark_theme.dart';
 import 'package:post/src/controllers/register.dart';
 import 'package:post/src/provider.dart';
+import 'package:post/src/ui/widgets/error_modal.dart';
 import 'package:post/src/ui/widgets/loader.dart';
 import 'package:post/src/ui/widgets/text_form_field.dart';
 import 'package:post/src/utils/responsive.dart';
@@ -22,9 +24,10 @@ class RegisterPage extends StatelessWidget {
           _emailController.text, _passwordController.text);
       closeLoader(context);
       Navigator.of(context).pop();
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
       closeLoader(context);
-      log(e.toString());
+      openError(context, e.message!);
+      log(e.message!);
     }
   }
 

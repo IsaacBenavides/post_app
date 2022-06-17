@@ -14,7 +14,6 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int _currentIndex = 0;
   final List<IconData> _icons = const [
     Icons.home,
-    Icons.search,
     Icons.person,
   ];
 
