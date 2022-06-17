@@ -16,4 +16,12 @@ class LoginController implements Controller<AuthRepository> {
       rethrow;
     }
   }
+
+  loginWithGoogle() async {
+    try {
+      await _repository.signInWithGoogle();
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

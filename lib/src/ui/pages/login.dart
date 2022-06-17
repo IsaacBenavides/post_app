@@ -28,6 +28,16 @@ class LoginPage extends StatelessWidget {
     }
   }
 
+  void loginWithGoogle(BuildContext context, LoginController controller) async {
+    try {
+      await controller.loginWithGoogle();
+      Navigator.of(context)
+          .pushNamedAndRemoveUntil(RoutesNames.home, (route) => false);
+    } catch (e) {
+      log(" este es un maldito error ${e.toString()}");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final Responsive responsive = Responsive.of(context);
@@ -56,7 +66,9 @@ class LoginPage extends StatelessWidget {
                                     Theme.of(context).colorScheme.onSurface)),
                       ),
                       SizedBox(height: responsive.hp(6)),
-                      const AuthWithSocialMediaContainer(),
+                      AuthWithSocialMediaContainer(
+                        onTap: () => loginWithGoogle(context, _loginController),
+                      ),
                       SizedBox(height: responsive.hp(6)),
                       _OrContainer(maxWidth: _maxWidth),
                       SizedBox(height: responsive.hp(6)),
@@ -134,12 +146,15 @@ class LoginPage extends StatelessWidget {
 }
 
 class AuthWithSocialMediaContainer extends StatelessWidget {
-  const AuthWithSocialMediaContainer({Key? key}) : super(key: key);
+  const AuthWithSocialMediaContainer({Key? key, required this.onTap})
+      : super(key: key);
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final Responsive responsive = Responsive.of(context);
     return GestureDetector(
+      onTap: onTap,
       child: Container(
           width: responsive.wp(90),
           height: responsive.hp(6.5),

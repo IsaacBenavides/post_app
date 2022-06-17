@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "541706800377",
+    "firebase_url": "https://auth-fa8ea-default-rtdb.firebaseio.com",
     "project_id": "auth-fa8ea",
     "storage_bucket": "auth-fa8ea.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "541706800377-n4v5gtrunfhujqt8nct179a4vtvciegc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.post",
+            "certificate_hash": "e674abc6c6c3ed4e692e48fd526f0fb75907fcbf"
+          }
+        },
         {
           "client_id": "541706800377-fjq1k9s9iq6ctm7i73biipcpufo2fv1p.apps.googleusercontent.com",
           "client_type": 3
